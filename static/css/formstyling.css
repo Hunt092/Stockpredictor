@@ -1,0 +1,39 @@
+.predict_card{
+	margin:auto;
+	width:100%;
+	padding-bottom:5%;
+
+}
+.predict_layout{
+	width:60%;
+	margin: auto;
+	margin-top: 2rem;
+	
+}
+button.predict_button{
+	background-color: #1E90FF;
+	color:#000000;
+	margin-bottom: 1.2rem;
+	width:40%;
+	margin: auto;
+}
+.answer{
+	margin-bottom:3rem;
+	width:50%;
+	margin:auto;
+	
+}
+.form_predict{
+	margin-top: 2rem;
+	margin-bottom:2rem;
+	
+}
+.inputedit{
+	width:60%;
+	margin: auto;
+	
+}
+.part_3{
+	background-color:#000000;
+	
+}

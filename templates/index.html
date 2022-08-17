@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <link rel="shortcut icon" href="{{url_for('static', filename='images/pngwing.com-128x115-1.png') }}" type="image/x-icon">
+  <title>Stock Predictor</title>
+
+  <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap-grid.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap-reboot.min.css')}}">
+  
+  <link rel="stylesheet" href="{{url_for('static',filename='theme/css/style.css')}}">
+  <link rel="preload" as="style" href="{{url_for('static',filename='css/additional.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/additional.css')}}" type="text/css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/formstyling.css')}}">
+  
+</head>
+<body>
+  <section class="header3 cid-sbtILzKg4A mbr-fullscreen" id="header3-0">
+    <img style="position: absolute;" src="{{url_for('static', filename='images/background11.jpg')}}" alt="">
+    <div class="align-center container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-6">
+                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>Stock Market Predictor</strong></h1>
+
+                <p class="mbr-text mbr-fonts-style display-7">#include HS109_PS5</p>
+                <div class="mbr-section-btn mt-3">
+                  <a class="btn btn-success display-4" onclick="console.log('clicked')">
+                    Predict Now!
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  
+  <section class="info4 cid-sbtIRo0ZYc" id="info4-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h3 class="mbr-section-title mycustom mbr-fonts-style display-1"><strong>Try our stock market predictor!</strong></h3>
+                <p class="mbr-text mbr-fonts-style mb-4 display-1">Earn some Money.</p>
+            </div>
+        </div>
+    </div>
+</section>
+  
+  <section class="features20 part_3" id="predict_price">
+    <div class="container ">
+      <div class="row justify-content-center">
+       <div class="col"></div>
+          <div class="col-md-12 col-lg-12">
+            <div class="card predict_card">
+               <form action="{{url_for('main')}}" method="POST" class="predict_layout">
+                    <div class="form-group ">
+                      <input type="text" class="form-control inputedit" id="text_group" name='stock' placeholder="Enter Stock Name">
+                    </div>
+                    <button type="submit" class="btn predict_button btn-lg" >Predict</button>
+                    <div class="form-group form_predict">
+                      {% if results %}
+                        {% for i in range(0,len) %}
+                        <input class="form-control answer ans_text" type="text" placeholder="Day-{{day[i]}} INR {{results[i][0]}}" readonly>
+                        {% endfor %}
+                      {% else %}
+                        <input class="form-control answer ans_text" type="text" placeholder="Predicted Price:-" readonly>
+                      {% endif %}
+                        <!--<textarea class="form-control " id="final_price" rows="2">price:-</textarea>-->
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+  
+ </body>
+</html>
